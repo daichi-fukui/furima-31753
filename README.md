@@ -11,7 +11,7 @@
 | first_name         | string  | null: false |
 | family_name_alias  | string  | null: false |
 | first_name_alias   | string  | null: false |
-| birthday           | integer | null: false |
+| birthday           | date    | null: false |
 
 ### Association
 
@@ -24,10 +24,11 @@
 | ------------ | ---------- | ----------------- |
 | name         | string     | null: false       |
 | explanation  | text       | null: false       |
-| category     | string     | null: false       |
-| status       | string     | null: false       |
+| category     | integer    | null: false       |
+| status       | integer    | null: false       |
 | delivery_fee | integer    | null: false       |
-| area         | string     | null: false       |
+| area         | integer    | null: false       |
+| date         | integer    | null: false       |
 | price        | integer    | null: false       |
 | user         | references | foreign_key: true |
 
@@ -53,12 +54,12 @@
 
 | Column       | Type    | Options     |
 | ------------ | ------- | ----------- |
-| postal_code  | integer | null: false |
-| prefecture   | string  | null: false |
+| postal_code  | string  | null: false |
+| prefecture   | integer | null: false |
 | municipality | string  | null: false |
 | address      | integer | null: false |
 | building     | string  |             |
-| phone_number | integer | null: false |
+| phone_number | string  | null: false |
 
 ### Association
 
