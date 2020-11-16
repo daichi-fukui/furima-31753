@@ -1,5 +1,6 @@
 FactoryBot.define do
   belongs_to :user
+  
   factory :item do
     name                     {"test"}
     explanation              {"test"}
