@@ -1,4 +1,6 @@
 FactoryBot.define do
+  has_many :items
+  
   factory :user do
     nickname              {"fukui"}
     email                 {Faker::Internet.free_email}
