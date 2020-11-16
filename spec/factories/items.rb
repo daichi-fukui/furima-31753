@@ -1,7 +1,8 @@
 FactoryBot.define do
-  belongs_to :user
-  
+
   factory :item do
+    association :user
+
     name                     {"test"}
     explanation              {"test"}
     category_id              {2}
