@@ -1,7 +1,6 @@
 FactoryBot.define do
 
   factory :user do
-    association :item
 
     nickname              {"fukui"}
     email                 {Faker::Internet.free_email}
