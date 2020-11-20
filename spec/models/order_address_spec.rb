@@ -23,6 +23,11 @@ describe OrderAddress do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Postal code is invalid")
       end
+      it "postal_codeがハイフンなしだと登録できない" do
+        @order_address.postal_code = "1234567"
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Postal code is invalid")
+      end
       it "area_idが未選択だと登録できない" do
         @order_address.area_id = 1
         @order_address.valid?
@@ -43,8 +48,13 @@ describe OrderAddress do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Phone number can't be blank", "Phone number is invalid")
       end
-      it "phone_numberが半角数字のみで11桁以内でないと登録できない" do
-        @order_address.phone_number = "１２３４５６７８９０１２"
+      it "phone_numberが11桁以内でないと登録できない" do
+        @order_address.phone_number = "012345678900"
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Phone number is invalid")
+      end
+      it "phone_numberが半角数字のみでないと登録できない" do
+        @order_address.phone_number = "０１２３４５６７８９０"
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Phone number is invalid")
       end
