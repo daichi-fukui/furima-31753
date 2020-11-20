@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
    :basic_auth
-# 継承　→親の機能を取り込んでいる
+# 継承 →親の機能を取り込んでいる
   private
 
   def configure_permitted_parameters
